@@ -24,6 +24,13 @@ jobs:
       - name: Validate rophim.json
         run: jq . rophim.json > /dev/null
 
+      # --- Ophim.json ---
+      - name: Download ophim.json
+        run: curl -L https://op-pvd.moviedb.dev -o ophim.json
+
+      - name: Validate ophim.json
+        run: jq . ophim.json > /dev/null
+
       # --- Dummy JSON (bỏ comment khi cần) ---
       # - name: Download dummy.json
       #   run: curl -L https://example.com/data.json -o dummy.json
@@ -31,7 +38,7 @@ jobs:
       # - name: Validate dummy.json
       #   run: jq . dummy.json > /dev/null
 
-      # --- Commit & Push tất cả file nếu có thay đổi ---
+      # --- Commit & Push tất cả file nếu có thay đổi ---  
       - name: Commit & Push if any JSON changed
         run: |
           git config --global user.name "github-actions[bot]"
