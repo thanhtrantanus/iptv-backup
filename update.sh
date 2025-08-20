@@ -5,6 +5,16 @@ set -e
 declare -A FILES=(
   ["https://iptv.rophim.dev"]="rophim.json"
   ["https://op-pvd.moviedb.dev"]="ophim.json"
+  ["https://kk-pvd.moviedb.dev"]="kkphim.json"
+  ["https://vp-pvd.moviedb.dev"]="vipphim.json"
+  ["https://tv-pvd.moviedb.dev"]="tvphim.json"
+  ["https://iptv.animehay.dev"]="animehay.json"
+  ["https://iptv.anime47.net"]="anime47.json"
+  ["https://iptv.nangcucz.link"]="nangcuc.json"
+  ["https://iptv.nangcucz.link/provider/vlxx"]="vlxx.json"
+  ["https://iptv.nangcucz.link/provider/heovl"]="heovl.json"
+  ["https://iptv.nangcucz.link/provider/sextop1"]="sextop1.json"
+  ["https://iptv.nangcucz.link/provider/sexlive"]="sexlive.json"
   # ["https://example.com/data.json"]="dummy.json"   # uncomment khi cần
 )
 
