@@ -18,7 +18,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}   # ✅ Dùng token của GitHub Actions
 
       - name: Download latest JSON
-        run: curl -L https://iptv.rophim.dev -o rophim.json
+        run: |
+          curl -s -L https://iptv.rophim.dev -o rophim.json || exit 0
+          if ! jq empty rophim.json 2>/dev/null; then
+            echo "⚠️ File không phải JSON hợp lệ hoặc rỗng, skip update."
+            rm -f rophim.json
+            exit 0
+          fi
 
       - name: Commit & Push if changed
         run: |
