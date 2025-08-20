@@ -36,10 +36,16 @@ done
 # Commit nếu có thay đổi
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
 git add *.json || true
+
 if git diff --cached --quiet; then
   echo "✅ No changes in JSON files"
 else
-  git commit -m "Update JSON files"
+  changed_files=$(git diff --cached --name-only | tr '\n' ', ')
+  timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
+  git commit -m "Update JSON files
+Files changed: ${changed_files}
+Timestamp: ${timestamp}"
   git push
 fi
