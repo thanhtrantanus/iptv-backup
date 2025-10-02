@@ -3,7 +3,7 @@ set -e
 
 # Danh sách JSON cần tải: URL -> filename
 declare -A FILES=(
-  ["https://iptv.rophim.dev"]="rophim.json"
+  # ["https://iptv.rophim.dev"]="rophim.json"
   ["https://op-pvd.moviedb.dev"]="ophim.json"
   ["https://kk-pvd.moviedb.dev"]="kkphim.json"
   ["https://vp-pvd.moviedb.dev"]="vipphim.json"
